@@ -5,7 +5,6 @@ resources:
     source:
       uri: https://github.com/fyamvbf/sandbox.git
       branch: main
-
 jobs:
   - name: job-hello-world
     public: true
@@ -15,3 +14,25 @@ jobs:
         trigger: true
       - task: hello-world
         file: resource-tutorial/for_concourse_ci_tutorial/tutorials/basic/task-hello-world/task_hello_world.yml
+      - task: hello-world2
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source: {repository: busybox}
+          inputs:
+          - name: resource-tutorial
+            path: gopath/res
+          - name: output-files
+          run:
+            path: sh 
+            args: 
+             - -exc
+             - |
+                hostname
+                whoami
+                env
+                pwd
+                find /tmp
+                ifconfig -a
+                cat output-files/oldhost.txt
