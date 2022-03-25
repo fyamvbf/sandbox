@@ -13,4 +13,4 @@ run:
         whoami
         env
         pwd
-        find ../
+        find /tmp/
