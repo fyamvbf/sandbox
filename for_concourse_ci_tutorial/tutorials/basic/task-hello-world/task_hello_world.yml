@@ -7,6 +7,8 @@ image_resource:
 
 inputs:
 - name: resource-tutorial
+outputs:
+- name: output-files
 run:
     path: sh 
     args: 
@@ -18,4 +20,5 @@ run:
         pwd
         find /tmp/
         ifconfig -a
-        hostname > resource-tutorial/oldhost.txt
+        hostname > output-files/oldhost.txt
+        

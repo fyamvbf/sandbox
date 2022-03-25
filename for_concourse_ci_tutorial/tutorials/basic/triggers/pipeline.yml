@@ -23,6 +23,7 @@ jobs:
           inputs:
           - name: resource-tutorial
             path: gopath/res
+          - name: output-files
           run:
             path: sh 
             args: 
@@ -34,4 +35,4 @@ jobs:
                 pwd
                 find /tmp
                 ifconfig -a
-                cat resource-tutorial/oldhost.txt
+                cat output-files/oldhost.txt
