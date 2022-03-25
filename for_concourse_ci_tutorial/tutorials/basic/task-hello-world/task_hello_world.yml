@@ -5,6 +5,9 @@ image_resource:
   type: docker-image
   source: {repository: busybox}
 
+inputs:
+- name: resource-tutorial
+
 run:
     path: sh 
     args: 
@@ -14,3 +17,4 @@ run:
         env
         pwd
         find /tmp/
+        ifconfig -a
