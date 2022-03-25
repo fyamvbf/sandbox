@@ -4,7 +4,7 @@ resources:
     type: git
     source:
       uri: https://github.com/fyamvbf/sandbox.git
-      branch: develop
+      branch: main
 
 jobs:
   - name: job-hello-world
@@ -12,7 +12,6 @@ jobs:
     serial: true
     plan:
       - get: resource-tutorial
-      - get: my-timer
         trigger: true
       - task: hello-world
         file: resource-tutorial/for_concourse_ci_tutorial/tutorials/basic/task-hello-world/task_hello_world.yml
